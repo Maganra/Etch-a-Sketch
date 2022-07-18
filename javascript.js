@@ -18,7 +18,7 @@ function createSquare(size) {
 
 function gridDimension() {
     squareSize = prompt("Enter size of grid: ");
-    if (squareSize > 100 || squareSize < 1 || squareSize == null || squareSize == "" || isNaN(squareSize)) {
+    if (squareSize > 100 || squareSize < 1 || squareSize == null || squareSize == "" || isNaN(squareSize) || squareSize % 1 < 0) {
         alert("Please enter a number between 1 and 100");
         gridDimension();
     }
@@ -43,10 +43,10 @@ function reset() {
 randomColor.addEventListener('click', function () {
     if (setRandom) {
         setRandom = false;
-        randomColor.style.backgroundColor = '#ab29cc';
+        randomColor.style.backgroundColor = 'var(--color-button)';
     } else {
         setRandom = true;
-        randomColor.style.backgroundColor = '#731e88';
+        randomColor.style.backgroundColor = 'var(--color-button-hover)';
     }
 });
 

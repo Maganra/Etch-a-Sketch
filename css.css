@@ -116,7 +116,3 @@ html {
 .random:hover {
     background-color: var(--color-button-hover);
 }
-
-.random.active {
-    background-color: var(--color-button-hover);
-}
