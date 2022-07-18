@@ -99,3 +99,24 @@ html {
 .box.active {
     background-color: var(--box-color);
 }
+
+.random {
+    display: block;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-button);
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.8rem;
+    border-radius: 0.5rem;
+    border-color: var(--color-button-hover);
+    border-style: solid;
+}
+
+.random:hover {
+    background-color: var(--color-button-hover);
+}
+
+.random.active {
+    background-color: var(--color-button-hover);
+}

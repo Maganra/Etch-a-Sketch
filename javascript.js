@@ -2,7 +2,9 @@ const grid = document.querySelector('.grid');
 let gridSize = 16;
 const resetBtn = document.querySelector('.reset');
 const applyGridSize = document.querySelector('.apply');
+const randomColor = document.querySelector('.random');
 let squareSize = 8;
+let setRandom = false;
 
 createGrid(squareSize);
 
@@ -38,9 +40,23 @@ function reset() {
     createGrid(squareSize);
 }
 
+randomColor.addEventListener('click', function () {
+    if (setRandom) {
+        setRandom = false;
+        randomColor.style.backgroundColor = '#ab29cc';
+    } else {
+        setRandom = true;
+        randomColor.style.backgroundColor = '#731e88';
+    }
+});
+
 grid.addEventListener('mouseover', function (e) {
     if (e.target.matches('.box')) {
-        e.target.classList.add('active');
+        if (setRandom) {
+            e.target.style.backgroundColor = setColor();
+        } else {
+            e.target.classList.add('active');
+        }
     }
 });
 
@@ -49,4 +65,11 @@ applyGridSize.addEventListener('click', function () {
     reset();
 });
 
+
+
 resetBtn.addEventListener('click', reset);
+
+function setColor() {
+    var randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    return "#" + randomColor;
+}
