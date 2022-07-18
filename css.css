@@ -1,13 +1,101 @@
-.row {
-    display: flex;
-    font-size: 9.5px;
-    text-align: center;
-    color: red;
-    width: 512px;
+:root {
+    --color-button: #ab29cc;
+    --color-button-hover: #731e88;
+    --color-reset: #868686;
+    --color-reset-hover: #5c5c5c;
+    --box-color: #db9ce4;
+    --ui-color: #ca60c5;
 }
 
-.cell {
-    width: 30px;
-    height: 30px;
-    border: 1px solid black;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.container {
+    padding: 0 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    background-color: var(--ui-color);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.controls-inner {
+    display: flex;
+    gap: 8px;
+    text-align: center;
+}
+
+.grid-size {
+    margin-bottom: 0.5rem;
+    color: var(--color-black);
+    font-weight: 500;
+    font-size: 1.8rem;
+}
+
+.apply {
+    display: block;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-button);
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1.8rem;
+    border-radius: 0.5rem;
+    border-color: var(--color-button-hover);
+    border-style: solid;
+}
+
+.apply:hover {
+    background-color: var(--color-button-hover);
+}
+
+.reset {
+    display: block;
+    background-color: var(--color-reset);
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border-color: var(--color-reset-hover);
+    border-style: solid;
+}
+
+.reset:hover {
+    background-color: var(--color-reset-hover);
+}
+
+.grid {
+    border: 2px solid var(--ui-color);
+    border-radius: 1rem;
+    width: 70rem;
+    height: 70rem;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+
+.box {
+    border: 0.5px solid rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+}
+
+.box.active {
+    background-color: var(--box-color);
 }
